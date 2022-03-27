@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 app.use(bodyParser.json());
 const api = require('./routes/api');
+const db = 'mongodb+srv://afolabi:8899fifafa@cluster0.yxzn0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
+mongoose.connect(db, err => {
+    if(err) {
+        console.log(err)
+    } else {
+        console.log("Connected to mongodb")
+    }
+})
 
 app.use('/api', api);
 

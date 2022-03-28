@@ -9,7 +9,7 @@ const db = 'mongodb+srv://afolabi:8899fifafa@cluster0.yxzn0.mongodb.net/eventsdb
 
 mongoose.connect(db, err => {
     if(err) {
-        console.log(err)
+        console.error(err)
     } else {
         console.log("Connected to mongodb")
     }
